@@ -38,10 +38,10 @@ const Home: NextPage = () => {
             <div className={styles.heroBody}>
               <h1 className={styles.heroTitle}>
                 <span className={styles.heroTitleGradient}>
-                  Build NFT Marketplaces
+                  BLOCKSWAP NFT Marketplace
                 </span>
                 <br />
-                faster than ever.
+                Trade and List your favourite NFTs.
               </h1>
               <p className={styles.heroSubtitle}>
                 <Link
@@ -49,10 +49,10 @@ const Home: NextPage = () => {
                   href="https://thirdweb.com"
                   target="_blank"
                 >
-                  thirdweb
+                  Blocklab-Protocol || Blockswap
                 </Link>{" "}
-                gives you the tools you need to create audited, performant, and
-                flexible NFT marketplaces in <b>hours</b>, <i>not months</i>.
+                gives you the best marketplace experience that you need.
+                Performance, security and flexible our watch word <b>Welcome</b> <i></i>.
               </p>
 
               <div className={styles.heroCtaContainer}>
@@ -61,10 +61,17 @@ const Home: NextPage = () => {
                 </Link>
                 <Link
                   className={styles.secondaryCta}
-                  href="https://github.com/thirdweb-example/marketplace-v3"
+                  href="https://blockswap-polygon-dex.vercel.app/"
                   target="_blank"
                 >
-                  GitHub
+                  Back to Dex
+                </Link>
+                <Link
+                  className={styles.secondaryCta}
+                  href="/"
+                  target="_blank"
+                >
+                  contact us
                 </Link>
               </div>
             </div>

@@ -1,0 +1,42 @@
+import Link from "next/link";
+import { MediaRenderer, useActiveListings, useContract } from "@thirdweb-dev/react";
+import { useRouter } from "next/router";
+import React from 'react';
+
+const Home: React.FC = () => {
+  // Connect your marketplace smart contract here (replace this address)
+  const { contract } = useContract("0x7Bbdb8eDa168C9c7e692574aD5ca4fF51b31a0Ab", "marketplace");
+
+  const { data: listings, isLoading: loadingListings } = useActiveListings(contract);
+
+  const router = useRouter();
+
+  return (
+    <>
+    <div>
+      {loadingListings ? (
+        <div>Loading listings...</div>
+      ) : (
+        <div>
+          {listings?.map((listing) => (
+            <div key={listing.id} onClick={() => router.push(`/listing/${listing.id}`)}>
+              <MediaRenderer src={listing.asset.image} />
+              <h2>
+                <Link href={`/listing/${listing.id}`}>
+                  <a>{listing.asset.name}</a>
+                </Link>
+              </h2>
+              <p>
+                <b>{listing.buyoutCurrencyValuePerToken.displayValue}</b>{" "}
+                {listing.buyoutCurrencyValuePerToken.symbol}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+</>
+  );
+};
+
+export default Home;

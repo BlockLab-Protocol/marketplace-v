@@ -15,6 +15,9 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "typeAcquisition": {
+    "include": ["@types/node", "@types/react", "@types/react-dom", "@types/jest"]
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/list"],
   "exclude": ["node_modules"]
 }
